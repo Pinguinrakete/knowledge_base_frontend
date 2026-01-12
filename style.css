@@ -160,7 +160,8 @@ a:hover {
     align-items: center;
 }
 
-input {
+input, 
+textarea {
     margin-top: 12px;
     height: 48px;
     width: 100%;
@@ -173,9 +174,17 @@ input {
     border: 2px solid var(--header-background);
 }
 
+textarea:focus,
 input:focus {
   border-color: var(--input-focus-outline-color);
   outline: none;
+}
+
+textarea {
+    height: auto;
+    min-height: 200px;
+    resize: vertical;
+    max-width: 100%;
 }
 
 button {

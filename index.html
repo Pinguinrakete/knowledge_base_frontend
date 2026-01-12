@@ -6,7 +6,7 @@
     <title>Knowledge Base</title>
     <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
     <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
+    <script src="/script.js" defer></script>
 </head>
 <body>
 <header>
@@ -16,7 +16,8 @@
             <h2>Knowledge<span>Base</span></h2>
         </div>
         <div class="d_flex_fd_r_ai_c gap-16">
-            <a href="#" onclick="openAddArticle(); return false;">Hinzufügen</a>
+            <a href="#" onclick="openMainMenu(); return false;" id="link_back" class="d_none">Zurück</a>
+            <a href="#" onclick="openAddArticle(); return false;" id="link_add_article">Hinzufügen</a>
             <a href="#" onclick="openAGB()">AGB</a>   
             <a href="#" onclick="openImpressum()">Impressum</a>
         </div>
@@ -42,7 +43,7 @@
     </section>
     <section class="add d_none" id="add_section">
         <input type="search" id="add_title" class="add_input" name="Title" placeholder="Title">
-        <!-- <textarea id="add_text" name="Text" rows="4" cols="50" placeholder="Text"> -->
+        <textarea id="add_text" name="Text" rows="4" cols="50" placeholder="Text"></textarea>
         <input type="search" id="add_searchfield" class="add_input" name="Author" placeholder="Author">
         <!-- <button id="btn_speichern">Speichern</button> -->
     </section>
@@ -53,7 +54,7 @@
         <h5>Impressum</h5>
     </section>
 </main>
-<button id="btn_hinzufuegen">
+<button id="btn_hinzufuegen" onclick="openAddArticle(); return false;">
       <img class="icon" src="./assets/icons/add.svg" alt="Plus">
       Hinzufügen
 </button>
