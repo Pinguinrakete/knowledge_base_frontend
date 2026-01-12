@@ -45,7 +45,9 @@
         <input type="search" id="add_title" class="add_input" name="Title" placeholder="Title">
         <textarea id="add_text" name="Text" rows="4" cols="50" placeholder="Text"></textarea>
         <input type="search" id="add_searchfield" class="add_input" name="Author" placeholder="Author">
-        <!-- <button id="btn_speichern">Speichern</button> -->
+        <div class="d_f_jc_end">
+            <button id="btn_speichern">Speichern</button>
+        </div>
     </section>
     <section class="agb d_none" id="agb_section">
         <h5>AGB</h5>
@@ -54,7 +56,7 @@
         <h5>Impressum</h5>
     </section>
 </main>
-<button id="btn_hinzufuegen" onclick="openAddArticle(); return false;">
+<button id="btn_hinzufuegen" class="btn_add" onclick="openAddArticle(); return false;">
       <img class="icon" src="./assets/icons/add.svg" alt="Plus">
       Hinzufügen
 </button>

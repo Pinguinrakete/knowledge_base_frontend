@@ -51,7 +51,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -160,6 +160,13 @@ a:hover {
     align-items: center;
 }
 
+.d_f_jc_end {
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
 input, 
 textarea {
     margin-top: 12px;
@@ -176,8 +183,8 @@ textarea {
 
 textarea:focus,
 input:focus {
-  border-color: var(--input-focus-outline-color);
-  outline: none;
+  border-color: var(--header-background);
+  outline: 1px solid var(--btn-prime-hover-color);
 }
 
 textarea {
@@ -188,9 +195,6 @@ textarea {
 }
 
 button {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
     border: none;
     background-color: var(--btn-prime-color);
     color: var(--btn-prime-font-color);
@@ -204,6 +208,12 @@ button {
     gap: 6px;
     z-index: 10
 
+}
+
+.btn_add {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
 }
 
 button:hover {
@@ -228,7 +238,7 @@ article,
 }
 
 .add {
-    padding: 48px 48px 24px 48px;
+    padding: 48px;
 }
 
 article {
@@ -241,6 +251,10 @@ article {
     width: 100%;
     max-width: 720px;
     height: calc(100dvh - 192px);
+}
+
+.add {
+    height: auto;
 }
 
 @media screen and (max-width: 720px) {
