@@ -22,24 +22,38 @@
         </div>
     </nav>
 </header>
-<div class="search_container d_fd_c_ai_c">
+<div class="search_container d_fd_c_ai_c" id="search_container">
     <h1>Knowledge Base</h1>
     <h3>Durchsuche unsere großartige</h3>
     <h3>Datenbank mit Fachwissen</h3>
     <input type="search" id="searchfield" name="searchfield" placeholder="Knowledge Base durchsuchen">
 </div>
 <main>
-    <article>
-        <h4>Artikel 1</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt?</p>
-    </article>
-
+    <section id="position_article">
         <article>
-        <h4>Artikel 2</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt?</p>
-    </article>
+            <h4>Artikel 1</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt?</p>
+        </article>
+
+            <article>
+            <h4>Artikel 2</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a, fuga nemo totam itaque cumque aperiam quos necessitatibus harum sequi adipisci in architecto maiores vitae! Assumenda, quas recusandae. Tenetur, nesciunt?</p>
+        </article>
+    </section>
+    <section class="add d_none" id="add_section">
+        <input type="search" id="add_title" class="add_input" name="Title" placeholder="Title">
+        <!-- <textarea id="add_text" name="Text" rows="4" cols="50" placeholder="Text"> -->
+        <input type="search" id="add_searchfield" class="add_input" name="Author" placeholder="Author">
+        <!-- <button id="btn_speichern">Speichern</button> -->
+    </section>
+    <section class="agb d_none" id="agb_section">
+        <h5>AGB</h5>
+    </section>
+    <section class="impressum d_none" id="impressum_section">
+        <h5>Impressum</h5>
+    </section>
 </main>
-<button>
+<button id="btn_hinzufuegen">
       <img class="icon" src="./assets/icons/add.svg" alt="Plus">
       Hinzufügen
 </button>

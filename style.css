@@ -6,6 +6,7 @@
   --input-focus-outline-color: rgba(238, 238, 238, 1);
 
   --font_dark_color: rgba(169, 169, 169, 1);
+  --font_black_color: rgba(0, 0, 0, 1);
   --font_white_color: rgba(237, 237, 237, 1);
 
   --btn-prime-color: rgba(128, 128, 128, 1);
@@ -45,12 +46,13 @@ body {
 
 main {
     flex-grow: 1;
+    padding: 48px;
+    z-index: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 48px;
-    z-index: 1;
 }
 
 header {
@@ -60,6 +62,9 @@ header {
     background-color: var(--header-background);
     display: flex;
     justify-content: center;
+    top: 0;
+    position: sticky;
+    z-index: 10;
 }
 
 nav {
@@ -86,7 +91,8 @@ nav {
     width: 72px;
 }
 
-h1 {
+h1,
+h5 {
     font-size: 48px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -108,6 +114,11 @@ h4 {
     font-size: 20px;
     color: black;
     margin-bottom: 8px;
+}
+
+h5 {
+    color: var(--font_black_color);
+    text-align: center;
 }
 
 span {
@@ -134,9 +145,12 @@ a:hover {
     width: 100%;
     background-color: var(--header-background);
     padding: 24px 48px 48px 48px;
+    top: 96px;
+    position: sticky;
+    z-index: 10;
 }
 
-.d-none {
+.d_none {
     display: none;
 }
 
@@ -192,14 +206,32 @@ button:hover {
     height: 16px;
 }
 
-article {
+.add,
+article,
+.impressum,
+.agb {
     background-color: var(--bg-color-light);
     border: 1px solid var(--card-border-color);
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 24px;
     max-width: 720px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.add {
+    padding: 48px 48px 24px 48px;
+}
+
+article {
+    margin-bottom: 24px;
+}
+
+.add,
+.agb,
+.impressum {
+    width: 100%;
+    max-width: 720px;
+    height: calc(100dvh - 192px);
 }
 
 @media screen and (max-width: 720px) {
@@ -247,11 +279,22 @@ article {
 
     .search_container {
         padding: 0 24px 48px 24px;
+        top: 80px;
     }
 
     main {
         padding: 24px;  
     }
+
+    .add,
+    .agb,
+    .impressum {
+        height: calc(100dvh - 128px);
+    }
+}
+
+.add_input {
+    max-width: 100%;
 }
 
 @media screen and (max-width: 375px) {
@@ -261,6 +304,15 @@ article {
 
     h3 {
         font-size: 18px;
+    }
+    input {
+            font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    input {
+        font-size: 16px;
     }
 }
 
