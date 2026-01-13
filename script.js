@@ -13,8 +13,9 @@ const API_BASE_URL = 'http://127.0.0.1:8000/api/';
 const DATA_URL = 'data/';
 
 
-function init() {
-    getData(API_BASE_URL, DATA_URL);
+async function init() {
+    let response = await getData(API_BASE_URL, DATA_URL);
+    renderArticle(response);
 }
 
 async function getData(API_BASE_URL, endpoint) {
@@ -26,9 +27,19 @@ async function getData(API_BASE_URL, endpoint) {
         throw new Error(`HTTP Fehler: ${response.status}`);
     }
 
-    const data = await response.json();
-    console.log("Data fetched successfully", data);
-    return data;
+    return response.json();
+}
+
+async function renderArticle(data) {
+    document.getElementById('content').innerHTML = '';
+    
+    for(let i = 0; i < data.length; i++) {
+        document.getElementById('content').innerHTML += 
+            `<article>
+                <h4>${data[i]['title']}</h4>
+                <p>${data[i]['text']}</p>      
+            </article>`;
+    }
 }
 
 function openAddArticle() {
