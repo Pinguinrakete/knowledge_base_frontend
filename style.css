@@ -118,6 +118,7 @@ h4 {
 
 p {
     min-height: 100px;
+    overflow-wrap: break-word;
 }
 
 h5 {

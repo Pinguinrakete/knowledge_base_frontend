@@ -68,6 +68,18 @@ async function postData(endpoint, data) {
     }
 }
 
+function submitPost() {
+    const data = {
+        title: document.getElementById('title').value,
+        text: document.getElementById('text').value,
+        author: document.getElementById('author').value
+    };
+
+    postData('data/', data);
+    cleanInputfield();
+    openMainMenu();
+}
+
 function cleanInputfield() {
     document.getElementById("add_title").value = "";
     document.getElementById("add_text").value = "";
