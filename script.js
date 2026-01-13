@@ -42,6 +42,38 @@ async function renderArticle(data) {
     }
 }
 
+async function postData(endpoint, data) {
+    try {
+        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const responseData = await response.json();
+
+        return {
+            ok: response.ok,
+            status: response.status,
+            data: responseData
+        };
+    } catch (error) {
+        return {
+            ok: false,
+            status: 'error',
+            message: error.message
+        };
+    }
+}
+
+function cleanInputfield() {
+    document.getElementById("add_title").value = "";
+    document.getElementById("add_text").value = "";
+    document.getElementById("add_author").value = "";
+}
+
 function openAddArticle() {
     document.getElementById('search_container').classList.remove('d_fd_c_ai_c');
     document.getElementById('btn_hinzufuegen').classList.add('d_none');

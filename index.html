@@ -33,10 +33,10 @@
     <section id="position_article">     
         <div id="content"></div>
     </section>
-    <form class="add d_none" id="add_section" onsubmit="post(); return false;">
-        <input type="search" id="add_title" class="add_input" name="Title" placeholder="Title" required>
-        <textarea id="add_text" rows="4" cols="50" name="Text" placeholder="Text"></textarea required>
-        <input type="search" id="add_author" class="add_author" name="Author" placeholder="Author" required>
+    <form class="add d_none" id="add_section" onsubmit="submitPost(); return false;">
+        <input type="search" id="title" class="add_input" name="Title" placeholder="Title" required>
+        <textarea id="text" rows="4" cols="50" name="Text" placeholder="Text"></textarea required>
+        <input type="search" id="author" class="add_author" name="Author" placeholder="Author" required>
         <div class="d_f_jc_end">
             <button type="submit" id="btn_speichern">Speichern</button>
         </div>
