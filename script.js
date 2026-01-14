@@ -12,10 +12,12 @@ const API_BASE_URL = 'http://127.0.0.1:8000/api/';
  */
 const DATA_URL = 'data/';
 
+let allArticles = [];
 
 async function init() {
     let response = await getData(API_BASE_URL, DATA_URL);
-    renderArticle(response);
+    allArticles = response;
+    renderArticle(allArticles);
 }
 
 async function getData(API_BASE_URL, endpoint) {
@@ -32,7 +34,12 @@ async function getData(API_BASE_URL, endpoint) {
 
 async function renderArticle(data) {
     document.getElementById('content').innerHTML = '';
-    
+
+    if (data.length === 0) {
+        content.innerHTML = '<p>Keine Artikel gefunden.</p>';
+        return;
+    }
+
     for(let i = 0; i < data.length; i++) {
         document.getElementById('content').innerHTML += 
             `<article>
@@ -40,6 +47,16 @@ async function renderArticle(data) {
                 <p>${data[i]['text']}</p>      
             </article>`;
     }
+}
+
+function searchArticle() {
+    const searchValue = document.getElementById('searchfield').value.toLowerCase();
+
+    const filteredArticles = allArticles.filter(article =>
+        article.title.toLowerCase().includes(searchValue) || article.text.toLowerCase().includes(searchValue)
+    );
+
+    renderArticle(filteredArticles);
 }
 
 async function postData(endpoint, data) {
